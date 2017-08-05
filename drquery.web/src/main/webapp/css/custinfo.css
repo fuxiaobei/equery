@@ -1,0 +1,25 @@
+a.mzone{
+background:url(../images/mzone.jpg) no-repeat left -1px;
+}
+a.gotone{
+background:url(../images/gotone.jpg) no-repeat left -1px;
+}
+a.szx{
+background:url(../images/szx.jpg) no-repeat left -1px;
+}
+
+body{
+background:#bbd3f9;
+}
+#body{
+background:none;
+}
+ul li input,label.text{
+border:none;
+border:1px solid #d4e9c2;
+}
+label.text{
+border:1px solid white;
+background:#ebf9df;
+color:#474747;
+}

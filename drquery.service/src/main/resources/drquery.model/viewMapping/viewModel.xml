@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<configuration>
+    <model modelId="F1" name="GRPS详单明细查询" process="defaultInvokeProcess" invoke="gprsProcess!processF1" useCache="false">
+        <!--<field name="USER_TERM_BRAND" type="string" cname="USER_TERM_BRAND" escapeField="A1"/>-->
+    </model>
+    <model modelId="F2" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF2" useCache="false">
+    </model>
+    <model modelId="F3" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF3" useCache="true">
+    </model>
+    <model modelId="F4" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF3" useCache="true">
+    </model>
+    <model modelId="F5" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF3" useCache="true">
+    </model>
+    <model modelId="F6" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF6" useCache="false">
+        <field name="USER_TERM_BRAND" type="string" cname="USER_TERM_BRAND" escapeField="A1"/>
+    </model>
+    <model modelId="F7" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF6" useCache="false">
+        <field name="USER_TERM_BRAND" type="string" cname="USER_TERM_BRAND" escapeField="A1"/>
+    </model>
+    <model modelId="F8" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF6" useCache="false">
+    </model>
+    <model modelId="F11" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF11" useCache="false">
+        <!--app_name字段根据app_id转义得到,定义所有需要输出的字段-->
+    	<field name="groupValueName" type="string"  cname="groupValueName" escapeField="A11"></field>
+    	<field name="groupValue" type="string"  cname="groupValue" escapeField="toupercase"></field>
+    	<field name="groupTotalFlow" type="string"  cname="groupTotalFlow" escapeField="toupercase"></field>
+    	<field name="groupRecordCount" type="string"  cname="groupRecordCount" escapeField="toupercase"></field>
+    </model>
+    <model modelId="F12" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF12" useCache="false">
+        <!--app_name字段根据app_id转义得到,定义所有需要输出的字段-->
+    	<field name="groupValueName" type="string"  cname="groupValueName" escapeField="A11"></field>
+    	<field name="groupValue" type="string"  cname="groupValue" escapeField="toupercase"></field>
+    	<field name="groupTotalFlow" type="string"  cname="groupTotalFlow" escapeField="toupercase"></field>
+    </model>
+    <model modelId="F13" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF13" useCache="false">
+        <field name="startTime" type="string" cname="startTime" escapeField="A1"/>
+        <field name="endTime" type="string" cname="endTime" escapeField="A1"/>
+        <field name="appName" type="string" cname="appName" escapeField="K1"/>
+        <field name="appType" type="string" cname="appType" escapeField="K1"/>
+        <field name="mainDomain" type="string" cname="mainDomain" escapeField="A1"/>
+        <field name="apnId" type="string" cname="apnId" escapeField="A1"/>
+       <!-- <field name="termBrandName" type="string" cname="termBrandName" escapeField="K1"/>-->
+        <field name="imei" type="string" cname="imei" escapeField="K1"/>
+        <field name="browserType" type="string" cname="browserType" escapeField="K1"/>
+        <field name="flow" type="string" cname="flow" escapeField="A1"/>
+    </model>
+    <model modelId="F14" name="" process="defaultInvokeProcess" invoke="gprsProcess!processF13" useCache="false">
+        <field name="startTime" type="string" cname="startTime" escapeField="A1"/>
+        <field name="endTime" type="string" cname="endTime" escapeField="A1"/>
+        <field name="appName" type="string" cname="appName" escapeField="K1"/>
+         <field name="rat" type="string" cname="rat" escapeField="K1"/>
+        <!--<field name="appType" type="string" cname="appType" escapeField="K1"/>-->
+        <!--<field name="mainDomain" type="string" cname="mainDomain" escapeField="A1"/>-->
+        <!--<field name="apnId" type="string" cname="apnId" escapeField="A1"/>-->
+        <!--<field name="termBrandName" type="string" cname="termBrandName" escapeField="A1"/>-->
+        <!--<field name="browserType" type="string" cname="browserType" escapeField="K1"/>-->
+        <field name="flow" type="string" cname="flow" escapeField="A1"/>
+        <field name="url" type="string" cname="url" escapeField="A1"/>
+        <field name="serverIp" type="string" cname="serverIp" escapeField="A1"/>
+        <field name="rat" type="string" cname="rat" escapeField="K1"/>
+        <field name="regionName" type="string" cname="regionName" escapeField="A1"/>
+    </model>
+
+
+    <model modelId="F00" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processGet" useCache="false">
+    </model>
+    <model modelId="F01" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processSearch" useCache="false">
+        <field name="name" type="string" cname="serverIp" escapeField="A20"/>
+        <field name="pic" type="string" cname="pic" escapeField="-1"/>
+    </model>
+    <model modelId="F02" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processScan" useCache="false">
+    </model>
+    <model modelId="F03" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processDeepScan" useCache="false">
+    </model>
+    <model modelId="F04" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processDeepSsearch" useCache="false">
+    </model>
+    <model modelId="F05" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processSql" useCache="false">
+    </model>
+    <model modelId="F06" name="" process="defaultInvokeProcess" invoke="ocsearchProcess!processFileget" useCache="false">
+    </model>
+
+</configuration>

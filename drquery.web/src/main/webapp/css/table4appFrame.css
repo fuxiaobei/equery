@@ -1,0 +1,128 @@
+/* for table*/
+.G-TableHead,.G-TableBody{
+border-collapse:collapse;
+font-size:9pt;
+table-layout:fixed;
+}
+
+table caption{
+background:url(../images/title.gif) no-repeat;
+line-height:27px;
+text-align:left;
+padding-left:5px;
+color:white;
+}
+.G-TableHead th{
+height:21px;
+padding:0;
+text-align:center;
+border:none!important;
+border-left:1px solid #8A8A8A;
+border-right:1px solid #8A8A8A;
+background:url(../images/sortable.gif) no-repeat left top;
+color:white;
+}
+
+.G-TableBody tr{
+background-color:expression("#cadefc,#8ebfe3".split(",")[rowIndex%2]);
+line-height:23px;
+}
+.G-TableBody tr.hover{
+background:#32729a;
+color:white;
+}
+.G-TableBody tr.current{
+background:#32729a;
+color:white;
+}
+.G-TableBody td{
+border:1px solid #649fc2;
+}
+
+/*for treeTable*/
+td span.node{
+padding-left:18px;
+background:url(../images/shink.gif) no-repeat left top;
+cursor:hand;
+}
+td span.expand{
+background:url(../images/expand.gif) no-repeat left top;
+}
+td span.leaf{
+background:none;
+}
+
+.edit{
+background:url(../images/edit.gif) #FFFFCC no-repeat left top;
+cursor:text;
+}
+
+/*
+Appframe adapter
+*/
+th.GH-TD{
+background:url(../images/sortable.gif) no-repeat right top;
+}
+th.GH-SORT-ASC{
+background:url(../images/sorted_up.gif) no-repeat right top;
+}
+th.GH-SORT-DESC{
+background:url(../images/sorted_down.gif) no-repeat right top;
+}
+div.table-outer{
+border:none;
+overflow:hidden;
+background:url(../images/shadow.gif) repeat-y right top;
+
+}
+div.G-ScrollBar{
+border:1px solid #8A8A8A;
+overflow:auto;
+background:white;
+}
+
+input.table-page{
+border:1px solid #8A8A8A;
+background:url(../images/input.gif);
+width:2em;
+height:1.2em;
+text-align:center;
+font-size:9pt;
+position:relative;
+top:-1px;
+padding-top:0;
+}
+
+div.foot-table{
+height:32px;
+background:url(../images/bottom.gif) right top;
+}
+div.foot-table td{
+border:none;
+border-left:1px solid #8A8A8A;
+height:25px;
+padding:3px 0 0 10px;
+background:transparence;
+}
+table.foot-table a{
+height:10px;
+}
+#page-first{
+background:url(../images/page-first.gif) no-repeat left 1px;
+}
+#page-prev{
+background:url(../images/page-prev.gif) no-repeat left 1px;
+}
+#page-next{
+background:url(../images/page-next.gif) no-repeat left 1px;
+}
+#page-last{
+background:url(../images/page-last.gif) no-repeat left 1px;
+}
+#page-go{
+background:url(../images/go.gif) no-repeat left top;
+}
+.GD-CurrentRow{
+background:#32729a!important;
+color:white;
+}/*当前行样式*/

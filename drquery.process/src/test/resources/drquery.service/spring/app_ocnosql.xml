@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+    <!-- 连接池定义 -->
+	<bean id="ocnosqlPoolConfig"
+		class="com.asiainfo.billing.drquery.connection.pool.config.PoolConfig">
+		<property name="maxActive" value="${ocnosql.pool.maxActive}" />
+		<property name="maxIdle" value="${ocnosql.pool.maxIdle}" />
+		<property name="minIdle" value="${ocnosql.pool.minIdle}" />
+		<property name="maxWait" value="${ocnosql.pool.maxWait}" />
+		<property name="testWhileIdle" value="${ocnosql.pool.testWhileIdle}" />
+		<property name="minEvictableIdleTimeMillis" value="${ocnosql.pool.minEvictableIdleTimeMillis}" />
+		<property name="numTestsPerEvictionRun"  value="${ocnosql.pool.numTestsPerEvictionRun}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${ocnosql.pool.timeBetweenEvictionRunsMillis}" />
+		<property name="testOnBorrow" value="${ocnosql.pool.testOnBorrow}" />
+	</bean>
+	<!-- 压缩算法 -->
+	<!--  <bean id="hbaseCompress" class="com.ailk.ocnosql.core.compress.impl.HbaseCompressImpl" />
+	<bean class="com.ailk.ocnosql.core.config.OCNoSqlConfiguration"/>-->
+	<!-- 数据源连接定义 -->
+	<bean id="ocnosqlConnectionholder"
+		class="com.asiainfo.billing.drquery.datasource.ocnosql.OCNoSqlConnectionHolder"
+		scope="prototype">
+	</bean>
+	<!-- 连接池工厂定义 -->
+	<bean id="ocnosqlConnectionFactory"
+		class="com.asiainfo.billing.drquery.connection.ConcreteConnctionFactory">
+		<property name="poolConfig" ref="ocnosqlPoolConfig" />
+		<property name="connectionType" value="ocnosqlConnectionholder" />
+	</bean>
+	<!-- 数据源服务定义 -->
+	<bean id="ocnosqlDataSource"
+		class="com.asiainfo.billing.drquery.datasource.ocnosql.OCNoSqlDataSource">
+		<property name="factory" ref="ocnosqlConnectionFactory" />
+		<property name="tablePrefix" value="${ocnosql.query.tablePrefix}" />
+	</bean>
+</beans>

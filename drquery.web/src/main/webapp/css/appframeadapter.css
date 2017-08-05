@@ -1,0 +1,8 @@
+input.dbform_inputfield_style,input.dbform_disable_style,input.dbform_listbox_input_disable_style{
+	height:20px !important;
+	background:#fff url(../images/text-bg.gif) repeat-x 0 0 !important;
+	border: 1px solid #B5B8C8 !important;
+}
+input.dbform_listbox_input_disable_style{
+	/*width:11em !important;*/
+}

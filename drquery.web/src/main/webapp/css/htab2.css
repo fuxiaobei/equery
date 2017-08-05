@@ -1,0 +1,57 @@
+dl.htab2{
+position:relative;
+width:100%;
+height:100%;
+margin:0;
+}
+dl.htab2 dt{
+float:left;
+padding:0;
+height:24px;
+position:relative;
+z-index:100;
+border-bottom:none;
+background:url(../images/h-tab_normal_l.gif) left top  no-repeat;
+}
+dl.htab2 dt a{
+display:block;
+line-height:21px;
+text-decoration:none;
+float:left;
+background:url(../images/h-tab_normal_r.gif) right top  no-repeat;
+padding:3px 20px 0;
+color:white;
+/*
+js:expression(this.readyState=="complete"||(this.onclick=function(){
+		var cur=this.parentNode;
+		var arr=cur.parentNode.getElementsByTagName("dt");
+		for(var i=0;i<arr.length;i++){
+			if (arr[i]!=cur){
+				arr[i].className="";
+				arr[i].firstChild.className="";
+				arr[i].nextSibling.style.display="none";
+			}
+		}
+		cur.className="current";
+		cur.firstChild.className="current";
+		cur.nextSibling.style.display="block";
+	}));
+*/
+}
+
+dl.htab2 dt.current{
+background:url(../images/h-tab_current_l.gif) left top  no-repeat;
+}
+dl.htab2 dt a.current{
+color:black;
+background:url(../images/h-tab_current_r.gif) right top  no-repeat;
+}
+dl.htab2 dd{
+position:absolute;
+top:23px;
+left:0;
+width:expression(this.readyState=="complete"||this.parentNode.clientWidth-2);
+height:expression(this.readyState=="complete"||this.parentNode.clientHeight-28);
+border:1px solid #639FC3;
+background:white;
+}

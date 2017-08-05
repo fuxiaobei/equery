@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model modelId="ADDVALUE" table="dr_addvalue" name="400电话（3G增值等其它业务详单）">
+	<field index="1" name="TRADEMARK" type="long"/>
+	<field index="2" name="SERVICE_ID" type="long"/>
+	<field index="3" name="DR_TYPE" cname="话单类型" type="long" commonField="true"/>
+	<field index="4" name="BILL_MONTH" type="string"/>
+	<field index="5" name="RATE_PROD_ID" type="string"/>
+	<field index="6" name="PRODUCT_ID" type="long"/>
+	<field index="7" name="PROMOTION_PRODS" type="string"/>
+	<field index="8" name="PLAN_ID" type="long"/>
+	<field index="9" name="OPP_RATE_PROD_ID" type="string"/>
+	<field index="10" name="CUST_ID" type="long"/>
+	<field index="11" name="ACC_ID" type="long"/>
+	<field index="12" name="USER_ID" type="long"/>
+	<field index="13" name="IMSI" type="string"/>
+	<field index="14" name="USER_NUMBER" cname="用户号码" type="string" distinct="true" commonField="true"/>
+	<field index="15" name="BILL_INDICATE" type="long"/>
+	<field index="16" name="OPP_NUMBER" type="string"/>
+	<field index="17" name="OPP_USER_NUMBER" cname="对方号码" type="string" distinct="true" commonField="true"/>
+	<field index="18" name="OPP_PLAN_ID" type="long"/>
+	<field index="19" name="A_NUMBER" type="string"/>
+	<field index="20" name="START_TIME" cname="开始时间" type="string" distinct="true" commonField="true"/>
+	<field index="21" name="DURATION" cname="通话时长" type="long" summaryField="true" commonField="true"/>
+	<field index="22" name="RATING_RES" type="long"/>
+	<field index="23" name="CALL_TYPE" cname="呼叫类型" type="long" distinct="true" commonField="true" escapeField="1"/>
+	<field index="24" name="ROAM_TYPE" cname="漫游类型" type="long" commonField="true"/>
+	<field index="25" name="OPP_ACCESS_TYPE" type="long"/>
+	<field index="26" name="OPP_NUMBER_TYPE" cname="对端号码类型" type="long" commonField="true"/>
+	<field index="27" name="SP_RELA_TYPE" type="long"/>
+	<field index="28" name="HPLMN1" type="string"/>
+	<field index="29" name="HPLMN2" type="string"/>
+	<field index="30" name="HPLMN3" type="string"/>
+	<field index="31" name="VPLMN1" cname="一级漫游地" type="string" commonField="true"/>
+	<field index="32" name="VPLMN2" cname="二级漫游地" type="string" commonField="true"/>
+	<field index="33" name="VPLMN3" type="string"/>
+	<field index="34" name="RATING_FLAG" type="long"/>
+	<field index="35" name="ITEM_CODE1" type="long"/>
+	<field index="36" name="CHARGE1" cname="本地通话费" type="long" summaryField="true" commonField="true"/>
+	<field index="37" name="CHARGE1_DISC" cname="基本费优惠" type="long" commonField="true"/>
+	<field index="38" name="ITEM_CODE2" type="long"/>
+	<field index="39" name="CHARGE2" cname="长途通话费" type="long" summaryField="true" commonField="true"/>
+	<field index="40" name="CHARGE2_DISC" cname="长途费优惠" type="long" commonField="true"/>
+	<field index="41" name="ITEM_CODE3" type="long"/>
+	<field index="42" name="CHARGE3" type="long"/>
+	<field index="43" name="CHARGE3_DISC" type="long"/>
+	<field index="44" name="ITEM_CODE4" type="long"/>
+	<field index="45" name="CHARGE4" cname="本地通话附加费" type="long" commonField="true"/>
+	<field index="46" name="CHARGE4_DISC" type="long"/>
+	<field index="47" name="FREE_RES_CODE1" cname="免费资源1" type="long" commonField="true"/>
+	<field index="48" name="FREE_RES_VAL1" cname="免费分钟数1" type="long" commonField="true"/>
+	<field index="49" name="FREE_RES_CODE2" cname="免费资源2" type="long" commonField="true"/>
+	<field index="50" name="FREE_RES_VAL2" cname="免费分钟数2" type="long" commonField="true"/>
+	<field index="51" name="FREE_RES_CODE3" cname="免费资源3" type="long" commonField="true"/>
+	<field index="52" name="FREE_RES_VAL3" cname="免费分钟数3" type="long" commonField="true"/>
+	<field index="53" name="ADDUP_RES_CODE1" type="long"/>
+	<field index="54" name="ADDUP_RES_VAL1" type="long"/>
+	<field index="55" name="ADDUP_RES_CODE2" type="long"/>
+	<field index="56" name="ADDUP_RES_VAL2" type="long"/>
+	<field index="57" name="ADDUP_RES_CODE3" type="long"/>
+	<field index="58" name="ADDUP_RES_VAL3" type="long"/>
+	<field index="59" name="STD_UNIT" type="long"/>
+	<field index="60" name="TOLL_STD_UNIT" type="long"/>
+	<field index="61" name="ORI_BASIC_CHARGE" type="long"/>
+	<field index="62" name="ORI_TOLL_CHARGE" type="long"/>
+	<field index="63" name="ORI_OTHER_CHARGE" type="long"/>
+	<field index="64" name="ADDUP_RES" type="long"/>
+	<field index="65" name="OPP_CONDITION_ID" type="long"/>
+	<field index="66" name="CONDITION_ID" type="long"/>
+	<field index="67" name="NETCALL_FLAG" type="long"/>
+	<field index="68" name="ESN" type="string"/>
+	<field index="69" name="SEQUENCE_NO" type="string" distinct="true"/>
+	<field index="70" name="MODIFICATION_IND" type="long"/>
+	<field index="71" name="OPP_ROAM_AREACODE" type="string"/>
+	<field index="72" name="OPP_HOME_AREACODE" type="string"/>
+	<field index="73" name="TOLL_TYPE" cname="长途类型" type="long" commonField="true" escapeField="3"/>
+	<field index="74" name="TOLL_TYPE2" type="long"/>
+	<field index="75" name="MSRN" type="string"/>
+	<field index="76" name="MSC_ID" cname="交换机代码" type="string" commonField="true"/>
+	<field index="77" name="SP_CODE" type="string" distinct="true"/>
+	<field index="78" name="OPERATOR_CODE" type="string"/>
+	<field index="79" name="BILL_FLAG" type="long"/>
+	<field index="80" name="SCP_ID" type="string"/>
+	<field index="81" name="LAC_ID" cname="定位地点识别" type="string" commonField="true"/>
+	<field index="82" name="CELL_ID" cname="基站代码" type="string" commonField="true"/>
+	<field index="83" name="SERVICE_TYPE" cname="业务类型" type="string" commonField="true"/>
+	<field index="84" name="SERVICE_CODE" type="string"/>
+	<field index="85" name="SERVICE_KEY" type="string"/>
+	<field index="86" name="STOP_CAUSE" type="long"/>
+	<field index="87" name="IN_TRUNKID" type="string"/>
+	<field index="88" name="OUT_TRUNKID" type="string"/>
+	<field index="89" name="GROUP_ID" type="string"/>
+	<field index="90" name="MOC_ID" type="string"/>
+	<field index="91" name="MTC_ID" type="string"/>
+	<field index="92" name="OTHER_INFO1" type="string"/>
+	<field index="93" name="OTHER_INFO2" type="string"/>
+	<field index="94" name="OTHER_INFO3" type="string"/>
+	<field index="95" name="OTHER_INFO4" type="string"/>
+	<field index="96" name="OTHER_INFO5" type="string"/>
+	<field index="97" name="PROCESS_TIME" type="string"/>
+	<field index="98" name="BACKUP_DATE" type="string"/>
+	<field index="99" name="ORIGINAL_FILE" cname="原始文件名" type="string" commonField="true"/>
+	<field index="100" name="USER_TYPE" type="long"/>
+	<field index="101" name="COLLECTION_ITEM" type="string"/>
+	<field index="102" name="REDO_FLAG" type="long"/>
+	<field index="103" name="RESERVE1" type="string"/>
+	<field index="104" name="RESERVE2" type="string"/>
+	<field index="105" name="RESERVE3" type="string"/>
+	<field index="106" name="RESERVE4" type="string"/>
+	<field index="107" name="VIDEO_TYPE" type="long"/>
+	<field index="108" name="MNS_TYPE" cname="接入网络类型" type="long" commonField="true"/>
+	<field index="109" name="USER_PROPERTY" type="long"/>
+	<field index="110" name="OPP_PROPERTY" type="long"/>
+	<field index="111" name="CURR_FEE" type="long"/>
+	<field index="112" name="LATE_LINK" cname="延迟标志" type="long" commonField="true"/>
+	<field index="113" name="INPUT_TIME" type="string"/>
+	<field index="114" name="ROW_ID" type="long"/>
+</model>

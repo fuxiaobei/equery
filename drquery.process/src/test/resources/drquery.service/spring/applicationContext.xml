@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       default-autowire="byName" default-lazy-init="false">
+
+    <!-- ========================= Start of PERSISTENCE DEFINITIONS ========================= -->
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.asiainfo.billing.**.cache"/>
+    <context:component-scan base-package="com.**.datasource"/>
+    <context:component-scan base-package="com.**.model"/>
+    <context:component-scan base-package="com.**.task"/>
+
+    <!-- enable the configuration of transactional behavior based on annotations -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:drquery.service/runtime.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- Redis config -->
+    <bean id="localJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.pool.maxActive}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="minIdle" value="${redis.pool.local.minIdle}"/>
+        <property name="maxWait" value="${redis.pool.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+    </bean>
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.pool.maxActive}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxWait" value="${redis.pool.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+    </bean>
+
+
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.localhost}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="timeout" value="${redis.timeout}"/>
+        <property name="poolConfig" ref="localJedisPoolConfig"/>
+    </bean>
+
+    <!--
+    <bean id="jedisConnectionFactory1"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis1.host}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="timeout" value="${redis.timeout}"/>
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+    </bean>
+
+    <bean id="jedisConnectionFactory2"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"  >
+		<property name="hostName" value="${redis2.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="timeout" value="${redis.timeout}" />
+		<property name="poolConfig" ref="jedisPoolConfig" />
+	</bean>
+	<bean id="jedisConnectionFactory3"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >
+		<property name="hostName" value="${redis3.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="timeout" value="${redis.timeout}" />
+		<property name="poolConfig" ref="jedisPoolConfig" />
+	</bean>
+	<bean id="jedisConnectionFactory4"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >
+		<property name="hostName" value="${redis4.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="timeout" value="${redis.timeout}" />
+		<property name="poolConfig" ref="jedisPoolConfig" />
+	</bean> -->
+
+
+    <bean id="redisSwitch" class="com.asiainfo.billing.drquery.cache.support.RedisSwitch">
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="localMinIdle" value="${redis.pool.local.minIdle}"/>
+        <property name="jedisConnectionFactoryMap">
+            <bean class="java.util.LinkedHashMap">
+                <constructor-arg>
+                    <map>
+                        <!--<entry key-ref="jedisConnectionFactory1" value="true"/>-->
+                        <!-- <entry key-ref="jedisConnectionFactory2" value="true" />
+						<entry key-ref="jedisConnectionFactory3" value="true" />
+						<entry key-ref="jedisConnectionFactory4" value="true" />-->
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+        <property name="jedisConnectionFactory" ref="jedisConnectionFactory"/>
+    </bean>
+
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+          p:connection-factory-ref="jedisConnectionFactory"/>
+
+    <bean id="redisCache" class="com.asiainfo.billing.drquery.cache.redis.RedisCache_">
+        <property name="redisTemplate" ref="redisTemplate"/>
+        <property name="timeout" value="${redis.expiretime}"/>
+    </bean>
+
+    <bean id="resourceI18nBundle"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"/>
+    </bean>
+
+    <bean id="localCache" class="com.asiainfo.billing.drquery.cache.local.LocalCache"/>
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+    <bean class="com.asiainfo.billing.drquery.uniformStructure.UniformStructureReader"/>
+    <bean class="com.asiainfo.billing.drquery.model.ModelReader"/>
+    <bean class="com.asiainfo.billing.drquery.model.ViewModelReader"/>
+    <bean id="serviceLocator" class="com.asiainfo.billing.drquery.utils.ServiceLocator"/>
+    <!-- 动态编译 -->
+    <bean class="com.asiainfo.billing.drquery.process.compile.BeanConfigerReader"/>
+
+    <!--详单系统接口层缓存配置  -->
+    <!-- <bean id="aiipsIdenCache" class="com.asiainfo.billing.drquery.common.AiipsIdenCache"/>
+	<bean id="qryPropertyCache" class="com.asiainfo.billing.drquery.common.QryPropertyCache"/>
+	<bean id="qryOpenCtrlCache" class="com.asiainfo.billing.drquery.common.QueryOpenCtrlCache"/>
+	<bean id="roleCdrCfgCache" class="com.asiainfo.billing.drquery.common.RoleCdrCfgCache"/>
+	<bean id="schemeDefCache" class="com.asiainfo.billing.drquery.common.SchemeDefCache"/> -->
+
+    <!-- 初始化Exception Config -->
+    <bean class="com.asiainfo.billing.drquery.exception.ExceptionConfigInit"/>
+</beans>

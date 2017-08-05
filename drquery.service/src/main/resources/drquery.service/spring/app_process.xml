@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       default-autowire="byName" default-lazy-init="false">
+	
+    <bean id="proxy" class="com.asiainfo.billing.drquery.datasource.DataSourceProxy">
+        <property name="timeout" value="${dataSourceExceptonTimeout}" />
+    </bean>
+    <bean id="dataSourceAdapter" class="com.asiainfo.billing.drquery.datasource.DataSourceAdapter">
+        <property name="backupMapping">
+            <bean class="java.util.HashMap">
+                <constructor-arg>
+                    <map>
+                        <!--<entry key="gBDataSource" value="ondemandDataSource"></entry>
+                        <entry key="ocnosqlDataSource" value="prebillSource"></entry>-->
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+        <property name="proxy">
+            <ref bean="proxy" />
+        </property>
+        <property name="dataSourceEntries">
+            <bean class="java.util.HashMap">
+                <constructor-arg>
+                    <map>
+                        <!--  <entry key="fileDataSource" value-ref="fileDataSource"></entry>-->
+                      <entry key="ocnosqlDataSource" value-ref="ocnosqlDataSource"></entry>                       
+<entry key="ocsearchDataSource" value-ref="ocsearchDataSource"></entry>
+                        <!--  <entry key="gBDataSource" value-ref="gBDataSource"></entry>
+                        <entry key="prebillSource" value-ref="prebillSource"></entry>
+                        <entry key="ondemandDataSource" value-ref="ondemandDataSource"></entry>-->
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <!-- 基础路由策略 -->
+    <bean id="baseDataSourceRoute" class="com.asiainfo.billing.drquery.process.core.route.BaseDataSourceRoute">
+        <property name="adapter">
+            <ref bean="dataSourceAdapter" />
+        </property>
+    </bean>
+    <!-- 业务类型查询路由策略 -->
+    <bean id="dataSourceBusiTypesRoute" class="com.asiainfo.billing.drquery.process.core.route.DataSourceBusiTypesRoute">
+        <property name="adapter">
+            <ref bean="dataSourceAdapter" />
+        </property>
+    </bean>
+    <!--清单查询路由策略-->
+    <bean id="dataSourceQueryCheckRoute" class="com.asiainfo.billing.drquery.process.core.route.DataSourceQueryCheckRoute">
+        <property name="adapter">
+            <ref bean="dataSourceAdapter" />
+        </property>
+    </bean>
+     <!-- 联调接口路由测试-->
+    <bean id="dataSourceRoute1" class="com.asiainfo.billing.drquery.process.core.route.DataSourceRoute1">
+        <property name="adapter">
+            <ref bean="dataSourceAdapter" />
+        </property>
+    </bean>
+    <bean id="commonfieldEscape" class="com.asiainfo.billing.drquery.process.operation.fieldEscape.CommonFieldEscapeOperation"/>
+    <bean id="commonDistinct" class="com.asiainfo.billing.drquery.process.operation.distinct.CommonDistinctOperation"/>
+    <bean id="commonMerge" class="com.asiainfo.billing.drquery.process.operation.merge.CommonMergeOperation"/>
+    <bean id="commonSummary" class="com.asiainfo.billing.drquery.process.operation.summary.CommonSummaryOperation"/>
+    <bean id="jfCommonSummary" class="com.asiainfo.billing.drquery.process.operation.summary.DRNewJFCommonSummaryOperation"/>
+
+
+    <bean id="serviceLocator" class="com.asiainfo.billing.drquery.utils.ServiceLocator"/>
+    <bean id="processFactory" class="com.asiainfo.billing.drquery.process.core.ProcessFactory">
+        <property name="commProcessEntries">
+            <bean class="java.util.HashMap">
+                <constructor-arg>
+                    <map>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+        <property name="allProcessEntries">
+            <bean class="java.util.HashMap">
+                <constructor-arg>
+                    <map>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+    <!--
+    <bean
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="fieldEscapeDataTrigger" />
+            </list>
+        </property>
+    </bean>
+    <bean id="fieldEscapeDataJob"
+              class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="AxisClient" />
+        <property name="targetMethod" value="scheduler" />
+    </bean>
+    <bean id="fieldEscapeDataTrigger"
+              class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="fieldEscapeDataJob" />
+        <property name="cronExpression" value="0 * * ? * * *" />
+    </bean>
+    -->
+    <bean id="cacheProvider" class="com.asiainfo.billing.drquery.cache.CacheProvider"/>
+
+    <bean id="defaultInvokeProcess" class="com.asiainfo.billing.drquery.process.core.process.DefaultInvokeProcess">
+        <property name="dataSourceRoute">
+            <ref bean="baseDataSourceRoute" />
+        </property>
+        <property name="fieldEscape">
+            <ref bean="commonfieldEscape" />
+        </property>
+    </bean>
+
+    <bean id="gprsUpdateProcess" class="com.asiainfo.billing.drquery.process.core.process.GPRSFlowUnpdateProcess">
+        <property name="tablePrefix" value="${ocnosql.query.tablePrefix}" />
+    </bean>
+
+    <bean id="AxisClient" class="com.asiainfo.billing.drquery.axis2client.AxisClient"/>
+    <bean id="defaultPasswordDecoder" class="com.asiainfo.billing.drquery.connection.PasswordDecoder.DefaultDecoder"/>
+</beans>

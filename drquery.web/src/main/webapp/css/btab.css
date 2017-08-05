@@ -1,0 +1,54 @@
+dl.btab{
+position:relative;
+margin:0;
+width:100%;
+height:100%;
+
+}
+dl.btab dt{
+position:relative;
+height:25px;
+border:1px solid #4A79A3;
+border-top:none;
+float:left;
+margin-right:5px;
+margin-top:expression(this.readyState=="complete"||(this.parentNode.clientHeight-28));
+z-index:1;
+}
+dl.btab dt a{
+display:block;
+text-align:center;
+line-height:25px;
+padding-left:15px;
+padding-right:15px;
+/*
+js:expression(this.readyState=="complete"||(this.onclick=function(){
+		var cur=this.parentNode;
+		var arr=cur.parentNode.getElementsByTagName("dt");
+		for(var i=0;i<arr.length;i++){
+			if (arr[i]!=cur){
+				arr[i].className="";
+				arr[i].firstChild.className="";
+				arr[i].nextSibling.style.display="none";
+			}
+		}
+		cur.className="current";
+		cur.firstChild.className="current";
+		cur.nextSibling.style.display="block";
+	)});
+*/
+}
+dl.btab dt a.current{
+border-top:1px solid white;
+display:block;
+}
+dl.btab dd{
+position:absolute;
+bottom:27px;
+left:0;
+width:expression(this.readyState=="complete"||(this.parentNode.clientWidth-2));
+height:expression(this.readyState=="complete"||(this.parentNode.clientHeight-32));
+border:1px solid #4A79A3;
+float:right;
+background:white;
+}

@@ -1,0 +1,82 @@
+form label,form input,form select,form textarea{
+display:block;
+float:left;
+}
+form label{
+width:4em;
+padding-top:5px;
+text-align:right;
+margin:0 0.6em;
+}
+form li{
+width:100%;
+}
+form single{
+width:1.2em;
+}
+
+
+form.simple {
+background:url(../images/form_br.gif) right bottom no-repeat;
+border:1px solid #757575;
+width:440px;
+padding-bottom:5px;
+position:relative;
+}
+form.simple fieldset{
+background:url(../images/form_tl.gif) left top no-repeat;
+padding:20px;
+width:400px;
+border:none;
+}
+
+form.simple input{
+padding-top:3px;
+}
+form.simple li{
+display:block;
+}
+form.simple legend{
+border:none;
+position:relative;
+top:-14px;
+left:-12px;
+color:white;
+}
+form.simple a.button{
+float:left;
+margin:10px 5px;
+position:relative;
+}
+
+
+
+form.simple2{
+background:white;
+border:1px solid gray;
+width:440px;
+padding:0;
+}
+form.simple2 fieldset{
+background:url(../images/window_form_bg.gif) repeat-x;
+width:400px;
+border:none;
+padding:20px;
+}
+form.simple2 a.button{
+float:right;
+margin:10px 5px;
+position:relative;
+}
+
+form.zoom{
+overflow:hidden;
+height:20px;
+}
+form a.zoom{
+position:absolute;
+top:5px;
+left:2px;
+color:expression(onclick=function(){$(this).toggleClass("shink").parent().parent().toggleClass("zoom");if (formZoom) formZoom()});
+}
+

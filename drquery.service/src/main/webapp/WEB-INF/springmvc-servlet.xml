@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-autowire="byName">
+	    <context:component-scan base-package="com.**.controller"/>
+        <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+        <!-- <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/> -->
+		<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+			<property name="messageConverters">
+				<list>
+					<bean
+						class="org.springframework.http.converter.StringHttpMessageConverter">
+						<property name="supportedMediaTypes">
+							<list>
+								<value>text/plain;charset=UTF-8</value>
+							</list>
+						</property>
+					</bean>
+				</list>
+			</property>
+		</bean>
+        <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+                <property name="ignoreAcceptHeader" value="true"/>
+                        <property name="defaultContentType" value="application/json"/>
+                        <property name="mediaTypes">
+                            <map>
+                                <entry key="json" value="application/json" />
+                                <entry key="xml" value="application/xml" />
+                            </map>
+                        </property>
+                        <!-- 用于开启 /userinfo/123?format=json 的支持 -->
+                        <property name="favorParameter" value="true"/>
+                        <property name="viewResolvers">
+                                <list>
+                                    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+                                    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                                        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+                                        <property name="prefix" value="/pages"/>
+                                        <property name="suffix" value=".jsp"></property>
+                                    </bean>
+                                </list>
+                        </property>
+                        <property name="defaultViews">
+                                <list>
+                                        <!-- for application/json -->
+                                        <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+                                        <!-- for application/xml -->
+                                        <bean class="org.springframework.web.servlet.view.xml.MarshallingView" >
+                                                <property name="marshaller">
+                                                        <bean class="org.springframework.oxm.xstream.XStreamMarshaller"/>
+                                                </property>
+                                        </bean>
+                                </list>
+                        </property>
+            </bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <bean id="localFieldEscape" class="com.asiainfo.billing.drquery.process.dynamic.LocalFieldEscape"
+          sourcePath="/source/escape/LocalFieldEscape.java" targetPath="/runtime/classes">
+    </bean>
+    <bean id="gprsProcess" class="com.asiainfo.billing.drquery.process.dynamic.GPRSProcess"
+          sourcePath="/source/process/GPRSProcess.java" targetPath="/runtime/classes">
+    </bean>
+    <bean id="ocsearchProcess" class="com.asiainfo.billing.drquery.process.dynamic.OCSearchProcess"
+          sourcePath="/source/process/OCSearchProcess.java" targetPath="/runtime/classes">
+    </bean>
+    <bean id="cacheKey" class="com.asiainfo.billing.drquery.process.dynamic.CacheKey"
+          sourcePath="/source/process/CacheKey.java" targetPath="/runtime/classes">
+    </bean>
+</configuration>

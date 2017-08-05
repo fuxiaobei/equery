@@ -1,0 +1,16 @@
+
+.br{
+background:url(../images/br.gif) no-repeat right bottom;
+}
+.bl{
+background:url(../images/bl.gif) no-repeat bottom left;
+}
+.tr{
+background:url(../images/tr.gif) no-repeat right top;
+padding:40px 5px 5px 5px;
+width:0;
+height:0;
+}
+.tl{
+background:url(../images/tl.gif) no-repeat;
+}

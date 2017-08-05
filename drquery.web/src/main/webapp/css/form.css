@@ -1,0 +1,39 @@
+form{
+border:1px solid #9d9b9c;
+background-color:white!important;
+}
+form legend{
+line-height:22px;
+position:relative;
+top:-16px;
+color:black;
+}
+form fieldset{
+border:none;
+background:url(../images/title_bg.jpg) no-repeat;
+padding:16px 5px;
+}
+form ul,form li{
+margin:0;
+padding:0;
+}
+form ul li{
+float:left;
+height:25px;
+overflow:hidden;
+}
+form label,form input,form select{
+	float:left;
+}
+ul.sep{
+	border-bottom:1px dotted #4A79A3;
+	padding-bottom:2px;
+	float:left;
+	margin-bottom:10px;
+}
+.region{
+padding:5px;
+clear:both;
+float:left;
+width:100%;
+}

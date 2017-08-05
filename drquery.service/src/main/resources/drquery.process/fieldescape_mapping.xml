@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldEscapes>
+    <fieldEscape escapeFieldCode="A1" type="local" localMethod="DEST_GPRS_A1"/>
+    <fieldEscape escapeFieldCode="A2" type="local" localMethod="DEST_GPRS_A2"/>
+    <fieldEscape escapeFieldCode="K1" type="local" localMethod="DEST_GPRS_K1"/>
+    <fieldEscape escapeFieldCode="A11" type="local" localMethod="DEST_GPRS_A11"/>
+    <fieldEscape escapeFieldCode="toupercase" type="local" localMethod="DEST_GPRS_TO_UPERCASE"/>
+    <fieldEscape escapeFieldCode="A20" type="local" localMethod="DEST_TEST_OCSEARCH"/>
+</fieldEscapes>

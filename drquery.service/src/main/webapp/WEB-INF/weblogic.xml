@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 8.1//EN" "http://www.bea.com/servers/wls810/dtd/weblogic810-web-jar.dtd">
+<weblogic-web-app>
+ <session-descriptor>
+    <session-param>
+      <param-name>CookieName</param-name>
+      <param-value>JSESSIONID_PORTAL_AIBPS</param-value>
+    </session-param>
+    <session-param>
+      <param-name>TimeoutSecs</param-name>
+      <param-value>5400</param-value>
+    </session-param>
+	<!--close session-->
+  </session-descriptor>
+  <jsp-descriptor>
+    <jsp-param>
+      <param-name>compileFlags</param-name>
+      <param-value>-g</param-value>
+    </jsp-param>
+    <jsp-param>
+      <param-name>keepgenerated</param-name>
+      <param-value>true</param-value>
+    </jsp-param>
+  </jsp-descriptor>
+  <container-descriptor>
+    <servlet-reload-check-secs>-1</servlet-reload-check-secs>
+  </container-descriptor>
+  <context-root>/</context-root>
+</weblogic-web-app>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model modelId="SMS" table="dr_sms" name="短信详单">
+	<field index="1" name="TRADEMARK" type="long"/>
+	<field index="2" name="DR_TYPE" type="long"/>
+	<field index="3" name="SERVICE_ID" type="long"/>
+	<field index="4" name="BILL_MONTH" type="string"/>
+	<field index="5" name="RATE_PROD_ID" type="string"/>
+	<field index="6" name="PRODUCT_ID" type="long"/>
+	<field index="7" name="PROMOTION_PRODS" type="string"/>
+	<field index="8" name="PLAN_ID" type="long"/>
+	<field index="9" name="CUST_ID" type="long"/>
+	<field index="10" name="ACC_ID" type="long"/>
+	<field index="11" name="USER_ID" type="long"/>
+	<field index="12" name="CONDITION_ID" type="long"/>
+	<field index="13" name="IMSI" type="string"/>
+	<field index="14" name="HPLMN1" type="string"/>
+	<field index="15" name="HPLMN2" type="string"/>
+	<field index="16" name="HPLMN3" type="string"/>
+	<field index="17" name="VPLMN1" cname="一级漫游地" type="string" commonField="true" escapeField="4"/>
+	<field index="18" name="VPLMN2" type="string"/>
+	<field index="19" name="START_TIME" cname="发送时间" type="string" distinct="true" commonField="true"/>
+	<field index="20" name="RATING_RES" type="long"/>
+	<field index="21" name="RATING_FLAG" type="long"/>
+	<field index="22" name="ITEM_CODE1" type="long"/>
+	<field index="23" name="CHARGE1" cname="信息费用" type="long" summaryField="true" commonField="true"/>
+	<field index="24" name="CHARGE1_DISC" cname="普通附加费" type="long" commonField="true"/>
+	<field index="25" name="ITEM_CODE2" type="long"/>
+	<field index="26" name="CHARGE2" type="long"/>
+	<field index="27" name="CHARGE2_DISC" type="long"/>
+	<field index="28" name="ITEM_CODE3" type="long"/>
+	<field index="29" name="CHARGE3" type="long"/>
+	<field index="30" name="CHARGE3_DISC" type="long"/>
+	<field index="31" name="ITEM_CODE4" type="long"/>
+	<field index="32" name="CHARGE4" type="long"/>
+	<field index="33" name="CHARGE4_DISC" type="long"/>
+	<field index="34" name="FREE_RES_CODE1" type="long"/>
+	<field index="35" name="FREE_RES_VAL1" type="long"/>
+	<field index="36" name="FREE_RES_CODE2" type="long"/>
+	<field index="37" name="FREE_RES_VAL2" type="long"/>
+	<field index="38" name="FREE_RES_CODE3" type="long"/>
+	<field index="39" name="FREE_RES_VAL3" type="long"/>
+	<field index="40" name="STOP_TIME" type="string"/>
+	<field index="41" name="USER_NUMBER" cname="用户号码" type="string" distinct="true" commonField="true"/>
+	<field index="42" name="SEQUENCE_NO" cname="话单序列号" type="string" distinct="true" commonField="true"/>
+	<field index="43" name="CALL_TYPE" cname="发送类型" type="long" distinct="true" commonField="true" escapeField="33"/>
+	<field index="44" name="BILL_INDICATE" type="long"/>
+	<field index="45" name="BILL_ID_TYPE" type="long"/>
+	<field index="46" name="MESSAGE_TYPE" type="long"/>
+	<field index="47" name="FINAL_STATE" type="long"/>
+	<field index="48" name="INFO_TYPE" cname="短信业务类型" type="long" commonField="true"/>
+	<field index="49" name="PRIOR_LEVEL" type="long"/>
+	<field index="50" name="SMS_CENTER_NUMBER" type="string"/>
+	<field index="51" name="USER_TYPE" type="long"/>
+	<field index="52" name="OPP_NUMBER" cname="对方号码" type="string" distinct="true" commonField="true"/>
+	<field index="53" name="ROAM_TYPE" cname="漫游类型" type="long" commonField="true" escapeField="2"/>
+	<field index="54" name="OPP_TYPE" type="long"/>
+	<field index="55" name="MESSAGE_LENGTH" cname="消息长度" type="long" commonField="true"/>
+	<field index="56" name="SERVICE_KEY" type="long"/>
+	<field index="57" name="SMS_ID" type="string"/>
+	<field index="58" name="DEDUCTION_FLAG" type="long"/>
+	<field index="59" name="SSR" type="long"/>
+	<field index="60" name="PID" cname="短消息的协议类型" type="long" commonField="true"/>
+	<field index="61" name="DCS" type="long"/>
+	<field index="62" name="ERROR_CODE" type="long"/>
+	<field index="63" name="SMS_TYPE" type="long"/>
+	<field index="64" name="MOC_BILL_TYPE" type="string"/>
+	<field index="65" name="MTC_BILL_TYPE" type="string"/>
+	<field index="66" name="OPP_USER_TYPE" type="string"/>
+	<field index="67" name="GATEWAY" cname="网关代码" type="string" commonField="true"/>
+	<field index="68" name="CFW_GATEWAY" cname="前转网关代码" type="string" commonField="true"/>
+	<field index="69" name="OPP_GATEWAY" cname="对端网关代码" type="string" commonField="true"/>
+	<field index="70" name="RETRY_TIMES" type="long"/>
+	<field index="71" name="ORI_BASIC_CHARGE" type="long"/>
+	<field index="72" name="ORI_TOLL_CHARGE" type="long"/>
+	<field index="73" name="ORI_OTHER_CHARGE" type="long"/>
+	<field index="74" name="PROCESS_TIME" cname="批价处理时间" type="string" commonField="true"/>
+	<field index="75" name="ORIGINAL_FILE" type="string"/>
+	<field index="76" name="BACKUP_DATE" type="string"/>
+	<field index="77" name="ADDUP_RES_CODE1" type="string"/>
+	<field index="78" name="ADDUP_RES_VAL1" type="string"/>
+	<field index="79" name="ADDUP_RES_CODE2" type="string"/>
+	<field index="80" name="ADDUP_RES_VAL2" type="string"/>
+	<field index="81" name="ADDUP_RES_CODE3" type="string"/>
+	<field index="82" name="ADDUP_RES_VAL3" type="string"/>
+	<field index="83" name="SP_CODE" type="string"/>
+	<field index="84" name="REDO_FLAG" type="string"/>
+	<field index="85" name="RESERVE1" type="string"/>
+	<field index="86" name="RESERVE2" type="string"/>
+	<field index="87" name="RESERVE3" type="string"/>
+	<field index="88" name="RESERVE4" type="string"/>
+	<field index="89" name="UD_HI" cname="长消息标识" type="string" commonField="true" escapeField="29"/>
+	<field index="90" name="UD_HID" cname="长短信参考号" type="string" commonField="true"/>
+	<field index="91" name="UD_PNUM" cname="长短信总条数" type="string" commonField="true"/>
+	<field index="92" name="UD_CUR_PNO" cname="长短信序列号" type="string" commonField="true"/>
+	<field index="93" name="USER_PROPERTY" type="string"/>
+	<field index="94" name="CURR_FEE" type="string"/>
+	<field index="95" name="LATE_LINK" cname="延迟标志" type="long" commonField="true"/>
+	<field index="96" name="INPUT_TIME" type="string"/>
+	<field index="97" name="ROW_ID" type="long"/>
+</model>

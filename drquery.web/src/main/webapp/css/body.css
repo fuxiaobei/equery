@@ -1,0 +1,19 @@
+body{
+	background:#204A93;
+}
+div.bl{
+	background:url(../images/bl.jpg) no-repeat left bottom;
+	margin:5px auto;
+	width:700px;
+}
+div.bl div.br{
+	background:url(../images/br.jpg) no-repeat right bottom;
+}
+div.bl div.br div.tl{
+	background:url(../images/tl.jpg) no-repeat left top;
+}
+div.bl div.br div.tl div.tr{
+	background:url(../images/tr.jpg) no-repeat right top;
+	padding:5px;
+}
+

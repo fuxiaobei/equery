@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model modelId="WAP" table="dr_wap" name="手机上网（WAP）">
+	<field index="1" name="TRADEMARK" type="long"/>
+	<field index="2" name="DR_TYPE" type="long"/>
+	<field index="3" name="SERVICE_ID" type="long"/>
+	<field index="4" name="BILL_MONTH" type="string"/>
+	<field index="5" name="RATE_PROD_ID" type="string"/>
+	<field index="6" name="PRODUCT_ID" type="long"/>
+	<field index="7" name="PROMOTION_PRODS" type="string"/>
+	<field index="8" name="PLAN_ID" type="long"/>
+	<field index="9" name="CUST_ID" type="long"/>
+	<field index="10" name="ACC_ID" cname="账户号" type="long" commonField="true"/>
+	<field index="11" name="USER_ID" type="long"/>
+	<field index="12" name="CONDITION_ID" type="long"/>
+	<field index="13" name="IMSI" type="string"/>
+	<field index="14" name="HPLMN1" cname="一级归属地" type="string" commonField="true"/>
+	<field index="15" name="HPLMN2" type="string"/>
+	<field index="16" name="HPLMN3" type="string"/>
+	<field index="17" name="VPLMN1" type="string"/>
+	<field index="18" name="VPLMN2" type="string"/>
+	<field index="19" name="START_TIME" cname="开始时间" type="string" distinct="true" commonField="true"/>
+	<field index="20" name="USER_NUMBER" cname="用户号码" type="string" distinct="true" commonField="true"/>
+	<field index="21" name="RATING_RES" type="long"/>
+	<field index="22" name="RATING_FLAG" type="long"/>
+	<field index="23" name="ITEM_CODE1" type="long"/>
+	<field index="24" name="CHARGE1" cname="通讯费" type="long" summaryField="true" commonField="true"/>
+	<field index="25" name="CHARGE1_DISC" type="long"/>
+	<field index="26" name="ITEM_CODE2" type="long"/>
+	<field index="27" name="CHARGE2" type="long"/>
+	<field index="28" name="CHARGE2_DISC" type="long"/>
+	<field index="29" name="ITEM_CODE3" type="long"/>
+	<field index="30" name="CHARGE3" type="long"/>
+	<field index="31" name="CHARGE3_DISC" type="long"/>
+	<field index="32" name="ITEM_CODE4" type="long"/>
+	<field index="33" name="CHARGE4" cname="信息费" type="long" summaryField="true" commonField="true"/>
+	<field index="34" name="CHARGE4_DISC" type="long"/>
+	<field index="35" name="FREE_RES_CODE1" type="long"/>
+	<field index="36" name="FREE_RES_VAL1" type="long"/>
+	<field index="37" name="FREE_RES_CODE2" type="long"/>
+	<field index="38" name="FREE_RES_VAL2" type="long"/>
+	<field index="39" name="FREE_RES_CODE3" type="long"/>
+	<field index="40" name="FREE_RES_VAL3" type="long"/>
+	<field index="41" name="SP_CODE" cname="SP企业代码,SP企业简称" type="string" commonField="true" escapeField="-1,6"/>
+	<field index="42" name="STOP_TIME" cname="结束时间" type="string" commonField="true"/>
+	<field index="43" name="SEQUENCE_NO" cname="话单序列号" type="long" distinct="true" commonField="true"/>
+	<field index="44" name="RECORD_TYPE" cname="记录类型" type="long" commonField="true"/>
+	<field index="45" name="GATEWAY_ID" type="string"/>
+	<field index="46" name="MISC_ID" type="string"/>
+	<field index="47" name="SERVICE_TYPE" type="long"/>
+	<field index="48" name="SERVICE_CODE" cname="业务代码,业务名称" type="string" commonField="true" escapeField="-1,7"/>
+	<field index="49" name="ROAM_TYPE" cname="漫游类型" type="long" commonField="true"/>
+	<field index="50" name="USER_TYPE" type="long"/>
+	<field index="51" name="DISCOUNT" cname="折扣率" type="long" commonField="true"/>
+	<field index="52" name="SERVICE_ATTR" type="long"/>
+	<field index="53" name="CDR_STATE" type="string"/>
+	<field index="54" name="MESSAGE_LENGTH" type="long"/>
+	<field index="55" name="CHARGE_TYPE" cname="WAP信息计费类别" type="long" commonField="true" escapeField="22"/>
+	<field index="56" name="SERVICE_KEY" cname="计费用户属性" type="string" commonField="true"/>
+	<field index="57" name="ORI_BASIC_CHARGE" type="long"/>
+	<field index="58" name="ORI_TOLL_CHARGE" type="long"/>
+	<field index="59" name="ORI_OTHER_CHARGE" type="long"/>
+	<field index="60" name="PROCESS_TIME" cname="批价处理时间" type="string" commonField="true"/>
+	<field index="61" name="ORIGINAL_FILE" cname="源文件" type="string" commonField="true"/>
+	<field index="62" name="BACKUP_DATE" type="string"/>
+	<field index="63" name="ADDUP_RES_CODE1" type="string"/>
+	<field index="64" name="ADDUP_RES_VAL1" type="string"/>
+	<field index="65" name="ADDUP_RES_CODE2" type="string"/>
+	<field index="66" name="ADDUP_RES_VAL2" type="string"/>
+	<field index="67" name="ADDUP_RES_CODE3" type="string"/>
+	<field index="68" name="ADDUP_RES_VAL3" type="string"/>
+	<field index="69" name="REDO_FLAG" type="string"/>
+	<field index="70" name="RESERVE1" type="string"/>
+	<field index="71" name="RESERVE2" type="string"/>
+	<field index="72" name="RESERVE3" type="string"/>
+	<field index="73" name="RESERVE4" type="string"/>
+	<field index="74" name="SUB_TYPE" type="string"/>
+	<field index="75" name="USER_PROPERTY" type="string"/>
+	<field index="76" name="LATE_LINK" cname="延迟标志" type="long" commonField="true"/>
+	<field index="77" name="INPUT_TIME" type="string"/>
+	<field index="78" name="ROW_ID" type="long"/>
+</model>

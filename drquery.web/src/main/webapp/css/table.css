@@ -1,0 +1,53 @@
+/* for table*/
+table.simple{
+border-collapse:collapse;
+border:1px solid #649fc2;
+clear:both;
+}
+table.simple caption{
+background:url(../images/title.gif) no-repeat;
+line-height:28px;
+text-align:left;
+padding-left:5px;
+color:white;
+}
+table.simple th{
+background:white;
+line-height:23px;
+text-align:center;
+border-left:1px solid #649fc2;
+border-right:1px solid #649fc2;
+}
+table.simple tbody tr{
+background-color:expression("#cadefc,#8ebfe3".split(",")[rowIndex%2]);
+line-height:23px;
+}
+table.simple tr.hover{
+background:#32729a;
+color:white;
+}
+table.simple tr.current{
+background:#32729a;
+color:white;
+}
+table.simple td{
+border:1px solid #649fc2;
+}
+
+/*for treeTable*/
+td span.node{
+padding-left:18px;
+background:url(../images/shink.gif) no-repeat left top;
+cursor:hand;
+}
+td span.expand{
+background:url(../images/expand.gif) no-repeat left top;
+}
+td span.leaf{
+background:none;
+}
+
+.edit{
+background:url(../images/edit.gif) #FFFFCC no-repeat left top;
+cursor:text;
+}

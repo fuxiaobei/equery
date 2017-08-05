@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- 全局变量 -->
+	<globalLogLevel>error</globalLogLevel>
+	<globalLogLevelOverride>false</globalLogLevelOverride>
+	<globalPrintStackTrace>false</globalPrintStackTrace>
+	
+	<exception>
+		<code>1000</code>
+		<message>系统繁忙，请稍后。</message>
+		<desc>系统异常，不是业务异常的都可以归结为系统异常。</desc>
+	</exception>
+	
+	<exception>
+		<code>1001</code>
+		<message>集团详单不支持查询，请到下载菜单下载。</message>
+	</exception>
+	
+	<exception>
+		<code>1002</code>
+		<message>您的详单数据超过阀值（10000条），请到下载菜单下载。</message>
+	</exception>	
+</config>

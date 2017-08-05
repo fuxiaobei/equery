@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model modelId="GPRSFLOW" name="GRPS详单" process="gprsProcess" table="GPRS">
+    <field name="LOG_ID" type="string" backName="LOG_ID"/>
+    <field name="ROW_NUM" type="string" backName="ROW_NUM"/>
+    <field name="PHONE_NO" type="string" backName="phoneNo"/>
+    <field name="APN_ID" type="string" backName="APN_ID"/>
+    <field name="ACCESS_MODE_ID" type="string" backName="accessModeName"/>
+    <field name="TERM_TYPE_ID" type="string" backName="termModeName"/>
+    <field name="TERM_MANUF_ID" type="string" backName="termManufName"/>
+    <field name="TERM_BRAND_ID" type="string" backName="TERM_BRAND_ID" />
+    <field name="TERM_MODEL_ID" type="string" backName="TERM_MODEL_ID"/>
+    <field name="TERM_OS" type="string" backName="TERM_OS"/>
+    <field name="SCREEN_SIZE" type="string" backName="SCREEN_SIZE"/>
+    <field name="TERM_PRICE_ID" type="string" backName="TERM_PRICE_ID"/>
+    <field name="Imei" type="string" backName="Imei"/>
+    <field name="LOGIC_AREA_ID" type="string" backName="LOGIC_AREA_ID"/>
+    <field name="LOGIC_AREA_SUBTYPE_ID" type="string" backName="LOGIC_AREA_SUBTYPE_ID"/>
+    <field name="LOGIC_AREA_TYPE_ID" type="string" backName="LOGIC_AREA_TYPE_ID"/>
+    <field name="LOGIC_AREA_NAME" type="string" backName="LOGIC_AREA_NAME"/>
+    <field name="LAC" type="string" backName="lac"/>
+    <field name="CI" type="string" backName="ci"/>
+    <field name="LOAD_PROTOCOL_ID" type="string" backName="LOAD_PROTOCOL_ID"/>
+    <field name="APP_PROTOCOL_ID" type="string" backName="APP_PROTOCOL_ID"/>
+    <field name="BUSI_ID" type="string" backName="BUSI_ID"/>
+    <field name="APP_ID" type="string" backName="appName" />
+    <field name="BUSI_TYPE_ID" type="string" backName="appType"/>
+    <field name="BUSI_PROVIDER_ID" type="string" backName="BUSI_PROVIDER_ID"/>
+    <field name="START_TIME" type="string" backName="startTime"/>
+    <field name="UP_PACK" type="string" backName="UP_PACK"/>
+    <field name="DOWN_PACK" type="string" backName="DOWN_PACK"/>
+    <field name="UPFLOW" type="string" cname="上行流量" backName="upFlow"/>
+    <field name="DOWNFLOW" type="string" cname="下行流量" backName="downFlow"/>
+    <field name="ALIASFLOW" type="string" backName="flow"/>
+    <field name="SITE_NAME_ID" type="string" backName="siteName"/>
+    <field name="SITE_CHANNEL_ID" type="string" backName="SITE_CHANNEL_ID"/>
+    <field name="RES_IP" type="string" backName="RES_IP"/>
+    <field name="SITE_OPERATORS_ID" type="string" backName="SITE_OPERATORS_ID"/>
+    <field name="CONT_CLASS_STR" type="string" backName="CONT_CLASS_STR" />
+    <field name="KEY_WORD_STR" type="string" backName="KEY_WORD_STR" />
+    <field name="CONT_CLASS_FLAG" type="string" backName="CONT_CLASS_FLAG" />
+    <field name="HOT_WORD_ID" type="string" backName="HOT_WORD_ID" />
+    <field name="CHARGING_ID" type="string" backName="CHARGING_ID" />
+    <field name="C_SGSN_IP" type="string" backName="C_SGSN_IP" />
+    <field name="C_GGSN_IP" type="string" backName="C_GGSN_IP"/>
+    <field name="U_SGSN_IP" type="string" backName="U_SGSN_IP"/>
+    <field name="U_GGSN_IP" type="string" backName="U_GGSN_IP" />
+    <field name="EX_TL_DOMAIN" type="string" backName="mainDomain" />
+    <field name="EX_COMP_DOMAIN" type="string" backName="fullDomain" />
+    <field name="EX_SITE_ID" type="string" backName="EX_SITE_ID" />
+    <field name="EX_SITE_CATEGORY_ID" type="string" backName="EX_SITE_CATEGORY_ID"  />
+    <field name="EX_CLASSIFY" type="string" backName="EX_CLASSIFY"  />
+    <field name="EX_NEED_CLASSIFY" type="string" backName="EX_NEED_CLASSIFY"/>
+    <field name="EX_PROVINCE_ID" type="string" backName="EX_PROVINCE_ID" />
+    <field name="ACCE_URL" type="string" backName="detailURL" />
+</model>
+
+
+

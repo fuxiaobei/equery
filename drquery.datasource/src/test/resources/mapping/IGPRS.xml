@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model modelId="IGPRS" table="dr_gprs" name="国际漫游GPRS详单">
+	<field index="1" name="TRADEMARK" type="long"/>
+	<field index="2" name="DR_TYPE" cname="套餐名称" type="long" commonField="true" escapeField="53"/>
+	<field index="3" name="SERVICE_ID" type="long"/>
+	<field index="4" name="BILL_MONTH" type="string"/>
+	<field index="5" name="RATE_PROD_ID" type="string"/>
+	<field index="6" name="PRODUCT_ID" type="long"/>
+	<field index="7" name="PROMOTION_PRODS" type="string"/>
+	<field index="8" name="PLAN_ID" type="long"/>
+	<field index="9" name="CUST_ID" type="long"/>
+	<field index="10" name="ACC_ID" type="long"/>
+	<field index="11" name="USER_ID" type="long"/>
+	<field index="12" name="CONDITION_ID" type="long"/>
+	<field index="13" name="IMSI" type="string" distinct="true"/>
+	<field index="14" name="USER_NUMBER" cname="用户号码" type="string" commonField="true"/>
+	<field index="15" name="HPLMN1" type="string"/>
+	<field index="16" name="HPLMN2" type="string"/>
+	<field index="17" name="HPLMN3" type="string"/>
+	<field index="18" name="VPLMN1" cname="一级漫游地" type="string" commonField="true" escapeField="4"/>
+	<field index="19" name="VPLMN2" cname="二级漫游地" type="string" commonField="true" escapeField="4"/>
+	<field index="20" name="START_TIME" cname="开始时间" type="string" distinct="true" commonField="true"/>
+	<field index="21" name="DURATION" cname="时长" type="long" summaryField="true" commonField="true"/>
+	<field index="22" name="RATING_RES" type="long"/>
+	<field index="23" name="RATING_FLAG" type="long"/>
+	<field index="24" name="ITEM_CODE1" type="long"/>
+	<field index="25" name="CHARGE1" cname="通信费" type="long" summaryField="true" commonField="true"/>
+	<field index="26" name="CHARGE1_DISC" type="long"/>
+	<field index="27" name="ITEM_CODE2" type="long"/>
+	<field index="28" name="CHARGE2" type="long"/>
+	<field index="29" name="CHARGE2_DISC" type="long"/>
+	<field index="30" name="ITEM_CODE3" type="long"/>
+	<field index="31" name="CHARGE3" type="long"/>
+	<field index="32" name="CHARGE3_DISC" type="long"/>
+	<field index="33" name="ITEM_CODE4" type="long"/>
+	<field index="34" name="CHARGE4" type="long"/>
+	<field index="35" name="CHARGE4_DISC" type="long"/>
+	<field index="36" name="FREE_RES_CODE1" type="long"/>
+	<field index="37" name="FREE_RES_VAL1" type="long"/>
+	<field index="38" name="FREE_RES_CODE2" type="long"/>
+	<field index="39" name="FREE_RES_VAL2" type="long"/>
+	<field index="40" name="FREE_RES_CODE3" type="long"/>
+	<field index="41" name="FREE_RES_VAL3" type="long"/>
+	<field index="42" name="RECORD_TYPE" type="long"/>
+	<field index="43" name="CALLER_INDICATE" type="long"/>
+	<field index="44" name="SGSN_ADDRESS" type="string"/>
+	<field index="45" name="SGSN_CHANGE" type="long"/>
+	<field index="46" name="MSNC" type="long"/>
+	<field index="47" name="LAC_ID" type="string"/>
+	<field index="48" name="CELL_ID" type="string"/>
+	<field index="49" name="RAC" type="string"/>
+	<field index="50" name="CHARGING_ID" cname="计费标识" type="string" distinct="true" commonField="true"/>
+	<field index="51" name="GGSN_ADDRESS" cname="GGSN地址" type="string" distinct="true" commonField="true"/>
+	<field index="52" name="APN_NI" cname="接入网络标识" type="string" commonField="true"/>
+	<field index="53" name="APN_OI" type="string"/>
+	<field index="54" name="PDP_TYPE" type="long"/>
+	<field index="55" name="PDP_ADDRESS" type="string"/>
+	<field index="56" name="CAUSE_CLOSE" type="long"/>
+	<field index="57" name="COMBINE_RESULT" type="string"/>
+	<field index="58" name="ROAM_TYPE" cname="漫游类型" type="long" commonField="true" escapeField="2"/>
+	<field index="59" name="UPVOLUME" cname="上行流量" type="long" summaryField="true" commonField="true"/>
+	<field index="60" name="DOWNVOLUME" cname="下行流量" type="long" summaryField="true" commonField="true"/>
+	<field index="61" name="PARTIAL_NUM" type="long"/>
+	<field index="62" name="ADDUP_RES" type="long"/>
+	<field index="63" name="TARIFF_SEQ_ID1" type="string"/>
+	<field index="64" name="QOS_REQ_RELIABILITY1" type="long"/>
+	<field index="65" name="QOS_REQ_DELAY1" type="long"/>
+	<field index="66" name="QOS_REQ_PRECEDENCE1" type="long"/>
+	<field index="67" name="QOS_REQ_PEAK1" type="long"/>
+	<field index="68" name="QOS_REQ_MEAN1" type="long"/>
+	<field index="69" name="QOS_NEG_RELIABILITY1" type="long"/>
+	<field index="70" name="QOS_NEG_DELAY1" type="long"/>
+	<field index="71" name="QOS_NEG_PRECEDENCE1" type="long"/>
+	<field index="72" name="QOS_NEG_PEAK1" type="long"/>
+	<field index="73" name="QOS_NEG_MEAN1" type="long"/>
+	<field index="74" name="DATA_FLOW_UP1" type="long"/>
+	<field index="75" name="DATA_FLOW_DOWN1" type="long"/>
+	<field index="76" name="BEGIN_TIME1" type="string"/>
+	<field index="77" name="DURATION1" type="long"/>
+	<field index="78" name="TARIFF_SEQ_ID2" type="string"/>
+	<field index="79" name="QOS_REQ_RELIABILITY2" type="long"/>
+	<field index="80" name="QOS_REQ_DELAY2" type="long"/>
+	<field index="81" name="QOS_REQ_PRECEDENCE2" type="long"/>
+	<field index="82" name="QOS_REQ_PEAK2" type="long"/>
+	<field index="83" name="QOS_REQ_MEAN2" type="long"/>
+	<field index="84" name="QOS_NEG_RELIABILITY2" type="long"/>
+	<field index="85" name="QOS_NEG_DELAY2" type="long"/>
+	<field index="86" name="QOS_NEG_PRECEDENCE2" type="long"/>
+	<field index="87" name="QOS_NEG_PEAK2" type="long"/>
+	<field index="88" name="QOS_NEG_MEAN2" type="long"/>
+	<field index="89" name="DATA_FLOW_UP2" type="long"/>
+	<field index="90" name="DATA_FLOW_DOWN2" type="long"/>
+	<field index="91" name="BEGIN_TIME2" type="string"/>
+	<field index="92" name="DURATION2" type="long"/>
+	<field index="93" name="TARIFF_SEQ_ID3" type="long"/>
+	<field index="94" name="QOS_REQ_RELIABILITY3" type="long"/>
+	<field index="95" name="QOS_REQ_DELAY3" type="long"/>
+	<field index="96" name="QOS_REQ_PRECEDENCE3" type="long"/>
+	<field index="97" name="QOS_REQ_PEAK3" type="long"/>
+	<field index="98" name="QOS_REQ_MEAN3" type="long"/>
+	<field index="99" name="QOS_NEG_RELIABILITY3" type="long"/>
+	<field index="100" name="QOS_NEG_DELAY3" type="long"/>
+	<field index="101" name="QOS_NEG_PRECEDENCE3" type="long"/>
+	<field index="102" name="QOS_NEG_PEAK3" type="long"/>
+	<field index="103" name="QOS_NEG_MEAN3" type="long"/>
+	<field index="104" name="DATA_FLOW_UP3" type="long"/>
+	<field index="105" name="DATA_FLOW_DOWN3" type="long"/>
+	<field index="106" name="BEGIN_TIME3" type="string"/>
+	<field index="107" name="DURATION3" type="long"/>
+	<field index="108" name="ORI_BASIC_CHARGE" type="long"/>
+	<field index="109" name="ORI_TOLL_CHARGE" type="long"/>
+	<field index="110" name="ORI_OTHER_CHARGE" type="long"/>
+	<field index="111" name="PROCESS_TIME" cname="批价处理时间" type="string" commonField="true"/>
+	<field index="112" name="ORIGINAL_FILE" cname="原文件名" type="string" commonField="true"/>
+	<field index="113" name="BACKUP_DATE" type="string"/>
+	<field index="114" name="USER_TYPE" type="long"/>
+	<field index="115" name="ADDUP_RES_CODE1" type="string"/>
+	<field index="116" name="ADDUP_RES_VAL1" type="string"/>
+	<field index="117" name="ADDUP_RES_CODE2" type="string"/>
+	<field index="118" name="ADDUP_RES_VAL2" type="string"/>
+	<field index="119" name="ADDUP_RES_CODE3" type="string"/>
+	<field index="120" name="ADDUP_RES_VAL3" type="string"/>
+	<field index="121" name="REDO_FLAG" type="string"/>
+	<field index="122" name="RESERVE1" type="string"/>
+	<field index="123" name="RESERVE2" type="string"/>
+	<field index="124" name="RESERVE3" type="string"/>
+	<field index="125" name="RESERVE4" type="string"/>
+	<field index="126" name="MNS_TYPE" cname="接入网络类型" type="string" commonField="true" escapeField="31"/>
+	<field index="127" name="USER_PROPERTY" type="string"/>
+	<field index="128" name="LATE_LINK" cname="延迟标志" type="long" commonField="true"/>
+	<field index="129" name="INPUT_TIME" type="string"/>
+	<field index="130" name="ROW_ID" type="long"/>
+</model>

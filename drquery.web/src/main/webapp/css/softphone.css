@@ -1,0 +1,178 @@
+body{
+	background:url(../images/titlebar.gif) no-repeat;
+	font-size:9pt;
+	margin:0;
+	padding:0;	
+}
+
+.cti-line{
+	position:absolute;
+	left:526px;
+	top:12px;
+}
+
+.cti-line div{
+	width:22px;
+	height:22px;
+	display:block;	
+	margin:1px 0px 0 0px;
+}
+.cti-line div.cti-line-idle{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll -90px 0px;
+}
+.cti-line div.cti-line-inring{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll -66px 0px;
+}
+.cti-line div.cti-line-inanswer{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll -23px 0px;
+}
+.cti-line div.cti-line-outanswer{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll 0px 0px;
+}
+.cti-line div.cti-line-outring{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll -45px 0px;
+}
+.cti-line div.cti-line-hold{
+	background:transparent url(../images/phone/phone_line.gif) no-repeat scroll -156px 0px;
+}
+.cti-text-label{
+	position:relative;
+    float:left;
+    width:30px;
+    padding:3px;
+    padding-left:0px;
+    clear:left;
+    z-index:2;
+	color:white;
+	font:normal 12px "新宋体";    
+}
+.cti-text-text{
+	position:relative;
+	width:80px;
+	padding:3px;
+	padding-left:0px;
+	color:#FFFF00;
+	float:left;
+	font:normal 12px "新宋体";
+}
+
+.cti-agent{
+	position:absolute;
+	left:300px;
+	top:11px;
+}
+
+.cti-work{
+	position:absolute;
+	left:390px;
+	top:11px;
+}
+
+.cti-tools{
+	position:absolute;
+	left:550px;
+	top:11px;
+	height:40px;
+	width:300px;
+	border:0px none;
+}
+
+.cti-tool{
+	position:absolute;
+	color:white;
+	height:26px;
+	line-height:26px;
+	padding-left:8px;
+	text-decoration:none;
+	font:normal 12px "新宋体";
+}
+.cti-tools a{
+	position:absolute;
+	float:left;
+	color:white;
+	line-height:26px;
+	padding-left:8px;
+	width:32px;
+	text-decoration:none;
+}
+
+.cti-tools a:hover{
+	text-decoration:underline;
+	color: #FFFF00;
+}
+.cti-tools button{
+	position:absolute;
+	background:transparent;
+	color:white;
+	height:26px;	
+	width:32px;	
+	border:0px none;
+}
+.cti-tools button.hover{
+	color:#FFFF00;
+	text-decoration:underline;
+}
+
+.line , .recorder{
+	width:22px;
+	height:22px;
+	display:block;
+	float:left;
+	margin:1px 0px 0 0px;	
+}
+.line-idle{
+	background:url(../images/phone.gif) no-repeat -89px 1px;
+}
+.line-inring{
+	background:url(../images/phone.gif) no-repeat -64px 1px;
+}
+.line-inanswer{
+	background:url(../images/phone.gif) no-repeat -23px 1px;
+}
+.line-outring{
+	background:url(../images/phone.gif) no-repeat -45px 1px;
+}
+
+.line-outanswer{
+	background:url(../images/phone.gif) no-repeat 0 1px;
+}
+.line-hold{
+	background:url(../images/phone.gif) no-repeat left 1px;
+}
+.recorder-start{
+	background:url(../images/phone.gif) no-repeat -110px 2px;
+}
+
+.recorder-stop{
+	background:url(../images/phone.gif) no-repeat -132px 2px;
+}
+
+#smsg{
+	background: url(../images/alert.gif) no-repeat 0px 0px;	
+	position:absolute;
+	display:none;
+	left:840px;
+	top:34px;	
+	width:160px;
+	height:22px;
+	color: #FF0000;
+	padding-left:18px;
+	padding-top:2px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+#skillalert{
+	background: url(../images/alert.gif) no-repeat 0px 0px;	
+	position:absolute;
+	top:16px;
+	left:840px;
+	width:160px;
+	font-size: 12px;
+	color: #FFFF00;
+	white-space: nowrap;
+	overflow:hidden;
+	padding-left:18px;
+	padding-top:2px;
+	cursor:pointer;
+}

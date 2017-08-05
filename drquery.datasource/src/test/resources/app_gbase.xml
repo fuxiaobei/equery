@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	<context:annotation-config />
+	<context:component-scan base-package="com.**.datasource"/>
+	<bean id="serviceLocator" class="com.asiainfo.billing.drquery.utils.ServiceLocator"/>
+	<!-- enable the configuration of transactional behavior based on annotations -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:runtime.properties</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="gbasePoolConfig" class="com.asiainfo.billing.drquery.connection.pool.config.PoolConfig">
+		<property name="maxActive" value="${gbase.pool.maxActive}" />
+		<property name="maxIdle" value="${gbase.pool.maxIdle}" />
+		<property name="minIdle" value="${gbase.pool.minIdle}" />
+		<property name="maxWait" value="${gbase.pool.maxWait}" />
+		<property name="testOnBorrow" value="${gbase.pool.testOnBorrow}" />
+	</bean>
+	
+	<bean id="gBaseConnectionholder" class="com.asiainfo.billing.drquery.datasource.gbase.GBaseConnectionHolder" scope="prototype">
+		<property name="dbUrl" value="${gbase.jdbcDriver}" />
+		<property name="driver" value="${gbase.connection}" />
+	</bean>
+	<bean id="gbaseConnectionFactory"
+		class="com.asiainfo.billing.drquery.connection.ConcreteConnctionFactory">
+		<property name="poolConfig" ref="gbasePoolConfig" />
+		<property name="connectionType" value="gBaseConnectionholder" />
+	</bean>
+	
+	<bean id="gBDataSource" class="com.asiainfo.billing.drquery.datasource.gbase.GBDataSource">
+		<property name="factory" ref="gbaseConnectionFactory" />
+		<property name="gbaseSqlPath" value="${gbase.gbaseSqlPath}" />
+	</bean>
+	<bean id="fileDataSource" class="com.asiainfo.billing.drquery.datasource.file.FileDataSource"/>
+	<bean id="dataSourceAdapter" class="com.asiainfo.billing.drquery.datasource.DataSourceAdapter">
+    	<property name="dataSourceEntries">
+			<bean class="java.util.HashMap">
+				<constructor-arg>
+					<map>
+						<entry key="gBDataSource" value-ref="gBDataSource"></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+    </bean>
+</beans>

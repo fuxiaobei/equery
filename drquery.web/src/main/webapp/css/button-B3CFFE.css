@@ -1,0 +1,25 @@
+a.button{
+background:url(../images/btn_left.gif) no-repeat;
+line-height:29px;
+text-decoration:none;
+display:block;
+width:0;
+float:left;
+}
+a.button:hover{
+background:url(../images/btn_left_hover.gif) no-repeat;
+}
+a.button span{
+background:url(../images/btn_right.gif) no-repeat top right;
+line-height:29px;
+color:black;
+display:block;
+text-align:center;
+word-break:keep-all;
+padding-left:12px;
+padding-right:12px;
+}
+a.button:hover span{
+background:url(../images/btn_right_hover.gif) no-repeat top right;
+color:white;
+}

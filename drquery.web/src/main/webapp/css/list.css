@@ -1,0 +1,52 @@
+dl.list{
+height:100%;
+width:100%;
+padding:1px;
+margin:0;
+}
+dl.list dt{
+border:0px solid red;
+width:100%;
+background:url(../images/l-tab_bg_l.gif) no-repeat left top;
+margin-top:1px;
+}
+dl.list dt a{
+text-decoration:none;
+background:url(../images/l-tab_bg_r.gif) no-repeat right top;
+display:block;
+line-height:24px;
+padding-left:5px;
+color:white;
+/*
+js:expression(this.readyState=="complete"||(this.onclick=function(){
+		var cur=this.parentNode;
+		var arr=cur.parentNode.getElementsByTagName("dt");
+		for(var i=0;i<arr.length;i++){
+			if (arr[i]!=cur){
+				arr[i].className="";
+				arr[i].firstChild.className="";
+				arr[i].nextSibling.style.display="none";
+			}
+		}
+		cur.className="current";
+		cur.firstChild.className="current";
+		cur.nextSibling.style.display="block";
+	}));
+*/
+}
+
+dl.list dt.current{
+background:url(../images/l-tab_current_bg_l.gif) no-repeat left top;
+}
+dl.list dt.current a{
+background:url(../images/l-tab_current_bg_r.gif) no-repeat right top;
+color:black;
+}
+
+dl.list dd{
+width:expression(this.parentNode.clientWidth-4);
+height:expression(this.parentNode.clientHeight-78);
+border-top:none;
+border:1px solid #4A7AA2;
+border-top:none;
+}
