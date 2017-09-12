@@ -214,7 +214,7 @@ public class RedisSwitch implements InitializingBean{
 						continue;
 					}finally{
 						if(conn != null)
-							RedisConnectionUtils.releaseConnection(conn, jedisConnectionFactory);
+							RedisConnectionUtils.releaseConnection(conn, factory);
 					}
 				}
 			}

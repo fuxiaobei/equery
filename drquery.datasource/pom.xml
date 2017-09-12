@@ -90,32 +90,7 @@
             <version>0.1</version>
             <scope>compile</scope>
         </dependency> -->
-        <dependency>
-			<groupId>com.ailk.oci</groupId>
-			<artifactId>ocnosql-client</artifactId>
-			<version>V02B00C00-SNAPSHOT</version>
-			<type>jar</type>
-			<scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm-all</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.ailk.oci</groupId>
-            <artifactId>ocnosql-common</artifactId>
-            <version>V02B00C00-SNAPSHOT</version>
-            <type>jar</type>
-           <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm-all</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>drquery.utils</artifactId>

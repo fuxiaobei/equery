@@ -126,9 +126,6 @@
         </property>
     </bean>
 
-    <bean id="gprsUpdateProcess" class="com.asiainfo.billing.drquery.process.core.process.GPRSFlowUnpdateProcess">
-        <property name="tablePrefix" value="${ocnosql.query.tablePrefix}" />
-    </bean>
 
     <bean id="AxisClient" class="com.asiainfo.billing.drquery.axis2client.AxisClient"/>
     <bean id="defaultPasswordDecoder" class="com.asiainfo.billing.drquery.connection.PasswordDecoder.DefaultDecoder"/>

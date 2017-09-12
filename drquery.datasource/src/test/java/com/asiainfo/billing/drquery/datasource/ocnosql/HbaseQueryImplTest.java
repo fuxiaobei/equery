@@ -1,9 +1,9 @@
 package com.asiainfo.billing.drquery.datasource.ocnosql;
 
 
-import com.ailk.oci.ocnosql.client.jdbc.HbaseJdbcHelper;
-import com.ailk.oci.ocnosql.client.jdbc.phoenix.PhoenixJdbcHelper;
 import com.alibaba.druid.pool.DruidDataSource;
+import com.asiainfo.ocsearch.datasource.jdbc.HbaseJdbcHelper;
+import com.asiainfo.ocsearch.datasource.jdbc.phoenix.PhoenixJdbcHelper;
 import org.junit.Assert;
 import org.junit.Test;
 

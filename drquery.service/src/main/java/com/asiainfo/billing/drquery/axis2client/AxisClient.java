@@ -1,16 +1,10 @@
 package com.asiainfo.billing.drquery.axis2client;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-import javax.xml.namespace.QName;
-
+import com.asiainfo.billing.drquery.client.distributed.DistributedClient;
+import com.asiainfo.billing.drquery.client.distributed.ZookeeperException;
+import com.asiainfo.billing.drquery.utils.PropertiesUtil;
+import com.asiainfo.ocsearch.datasource.jdbc.phoenix.PhoenixJdbcHelper;
 import net.sf.json.JSONObject;
-
 import org.apache.axis2.AxisFault;
 import org.apache.axis2.addressing.EndpointReference;
 import org.apache.axis2.client.Options;
@@ -23,10 +17,14 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.ailk.oci.ocnosql.client.jdbc.phoenix.PhoenixJdbcHelper;
-import com.ailk.oci.ocnosql.common.util.PropertiesUtil;
-import com.asiainfo.billing.drquery.client.distributed.DistributedClient;
-import com.asiainfo.billing.drquery.client.distributed.ZookeeperException;
+import javax.xml.namespace.QName;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 public class AxisClient {
 	
 	public static final JSONObject exception=new JSONObject();

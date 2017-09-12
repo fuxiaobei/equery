@@ -51,7 +51,6 @@ public class DBExtractBean {
                 		resultList.add(record);
                 		escapingMap.put(key, resultList);
                 	}
-                	System.out.println(record);
                 }else{
                  log.error("Result Set Column less than 2 columns.");
               }

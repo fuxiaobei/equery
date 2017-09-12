@@ -1,13 +1,14 @@
 package com.asiainfo.billing.drquery.datasource.ocnosql;
 
-import com.ailk.oci.ocnosql.client.jdbc.HbaseJdbcHelper;
-import com.ailk.oci.ocnosql.client.jdbc.phoenix.PhoenixJdbcHelper;
+
 import com.asiainfo.billing.drquery.connection.ConnectionException;
 import com.asiainfo.billing.drquery.connection.ConnectionFactory;
 import com.asiainfo.billing.drquery.datasource.BaseDataSource;
 import com.asiainfo.billing.drquery.datasource.DataSourceException;
 import com.asiainfo.billing.drquery.datasource.query.DRQueryParameters;
 import com.asiainfo.billing.drquery.datasource.query.DefaultQueryParams;
+import com.asiainfo.ocsearch.datasource.jdbc.HbaseJdbcHelper;
+import com.asiainfo.ocsearch.datasource.jdbc.phoenix.PhoenixJdbcHelper;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

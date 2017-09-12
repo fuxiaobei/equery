@@ -57,7 +57,12 @@
 			<artifactId>db2jcc4</artifactId>
 			<version>10.1</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
         <build>
         <plugins>
             <plugin>

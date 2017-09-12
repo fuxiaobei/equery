@@ -7,7 +7,6 @@ import com.asiainfo.billing.drquery.datasource.query.DefaultQueryParams;
 import com.asiainfo.billing.drquery.exception.BusinessException;
 import com.asiainfo.billing.drquery.exception.DrqueryRuntimeException;
 import com.asiainfo.billing.drquery.model.MetaModel;
-import com.asiainfo.billing.drquery.process.Executor;
 import com.asiainfo.billing.drquery.process.ProcessException;
 import com.asiainfo.billing.drquery.process.core.DRCommonProcess;
 import com.asiainfo.billing.drquery.process.core.request.CommonDRProcessRequest;
