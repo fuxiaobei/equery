@@ -118,7 +118,7 @@
         <dependency>
             <groupId>com.asiainfo</groupId>
             <artifactId>ocsearch-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.ow2.asm</groupId>
