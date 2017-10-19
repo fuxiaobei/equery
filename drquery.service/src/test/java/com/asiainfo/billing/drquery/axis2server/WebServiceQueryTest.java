@@ -1,10 +1,8 @@
 package com.asiainfo.billing.drquery.axis2server;
 
-import org.apache.axis2.AxisFault;
 import org.apache.axis2.addressing.EndpointReference;
 import org.apache.axis2.client.Options;
 import org.apache.axis2.rpc.client.RPCServiceClient;
-import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import javax.xml.namespace.QName;
@@ -48,11 +46,12 @@ public class WebServiceQueryTest {
     public void testWebService() throws Exception {
         RPCServiceClient client = new RPCServiceClient();
         Options options = client.getOptions();
-        String address = "http://localhost:8080/services/Axis2ServerAdaptor";
+        String address = "http://yj02:28080/drquery.service-1.0.0/services/Axis2ServerAdaptor";
         EndpointReference epf = new EndpointReference(address);
         options.setTo(epf);
         QName qname = new QName("http://axis2server.drquery.billing.asiainfo.com", "getAxis2Result");
-        String f1 = "{phoneNo:'8613501203380', interfaceType:'F13', startTime:'20150901',endTime:'20150902',startIndex:'7',offset:'1'}";
+        String f1 = "{phoneNo:'8613501203380', interfaceType:'F01', table:'table1',condition:'*:*'}";
         Object[] result = client.invokeBlocking(qname, new String[]{f1}, new Class[]{String.class});
+        System.out.println(result[0]);
     }
 }

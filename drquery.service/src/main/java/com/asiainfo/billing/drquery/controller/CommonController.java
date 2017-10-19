@@ -59,8 +59,8 @@ public class CommonController extends BaseController {
         }
         return queryDetailRecord(req, resp);
 	}
-	
-	
+
+
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView queryDetailRecord(HttpServletRequest req, HttpServletResponse resp) {
 
@@ -96,7 +96,7 @@ public class CommonController extends BaseController {
 			}
 		} catch (Exception ex) {
 			log.error("process request failed", ex);
-			ResMsg msg = new ResMsg(); 
+			ResMsg msg = new ResMsg();
 			msg.setRetCode("-1");
 			msg.setErrorMsg("process request failed : " + ex.getMessage());
 			msg.setHint("request failed");
@@ -105,7 +105,7 @@ public class CommonController extends BaseController {
             try{
 
                 String encryptStr;
-                if(retMap.get("data") == null){ //for file get service
+                if(retMap.get("data") == null&&retMap.get("result").equals(0)){ //for file get service
                     encryptStr= (String) retMap.get("extData");
                 }else{
                     ObjectMapper om = new ObjectMapper();

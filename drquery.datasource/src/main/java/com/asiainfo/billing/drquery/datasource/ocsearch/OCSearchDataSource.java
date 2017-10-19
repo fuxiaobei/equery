@@ -75,7 +75,7 @@ public class OCSearchDataSource implements BaseDataSource {
             log.info("ocsearch return " + retArr.size() + " records, query token: " + (System.currentTimeMillis() - t1) + "ms");
         } catch (ServiceException se) {
             try {
-                String message = "ocseach exec exception,error is [" + (new String(se.getErrorResponse(), "UTF-8")) + "]";
+                String message = "ocsearch exec exception,error is [" + (new String(se.getErrorResponse(), "UTF-8")) + "]";
 
                 log.error(message, se);
                 throw new DataSourceException(message);
@@ -86,7 +86,7 @@ public class OCSearchDataSource implements BaseDataSource {
         } catch (Exception ex) {
             Throwable cause = ex.getCause();
             if (cause != null) {
-                throw new DataSourceException("ocseach exec exception,error is [" + cause.getMessage() + "]");
+                throw new DataSourceException("ocsearch exec exception,error is [" + cause.getMessage() + "]");
             }
         }
         return retArr;

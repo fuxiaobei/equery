@@ -1,12 +1,13 @@
 package com.asiainfo.billing.drquery.process.dynamic;
 
-import com.ailk.oci.ocnosql.common.rowkeygenerator.MD5RowKeyGenerator;
+import com.asiainfo.ocsearch.expression.namespace.CommonStore;
 import com.asiainfo.billing.drquery.cache.CacheProvider;
 import com.asiainfo.billing.drquery.cache.ICache;
 import com.asiainfo.billing.drquery.datasource.query.DefaultQueryParams;
 import com.asiainfo.billing.drquery.exception.BusinessException;
 import com.asiainfo.billing.drquery.exception.DrqueryRuntimeException;
 import com.asiainfo.billing.drquery.model.MetaModel;
+import com.asiainfo.ocsearch.listener.ThreadPoolManager;
 import com.asiainfo.billing.drquery.process.ProcessException;
 import com.asiainfo.billing.drquery.process.core.DRCommonProcess;
 import com.asiainfo.billing.drquery.process.core.request.CommonDRProcessRequest;
@@ -70,7 +71,7 @@ public class GPRSProcess extends DRCommonProcess {
 
     public BaseDTO processF1(CommonDRProcessRequest request, MetaModel viewMeta, final Map extendParams)
             throws ProcessException, BusinessException {
-        String rowkey = (String) new MD5RowKeyGenerator().generate(request.getParam("phoneNo"));
+        String rowkey = (String) new CommonStore().md5Prefix(request.getParam("phoneNo"));
         String sql = "select PHONE_NO,NAME,EPARCHY_CODE,FLOW_PLAN_ID,MAIN_PLAN_FLAG,FREE_FLOW,USED_FLOW," +
                 "REMAIN_FLOW,USER_TERM_BRAND,USER_TERM_MODEL" +
                 " from THB_USER_INFO_DAY " +
@@ -85,7 +86,7 @@ public class GPRSProcess extends DRCommonProcess {
             return processF1(request, viewMeta, extendParams);
         }
 
-        String rowkey = new MD5RowKeyGenerator().generatePrefix(request.getParam("phoneNo")) + request.getParam("phoneNo");
+        String rowkey = new CommonStore().md5Prefix(request.getParam("phoneNo")) + request.getParam("phoneNo");
         String sql = "select PHONE_NO,NAME,EPARCHY_CODE,FLOW_PLAN_ID,MAIN_PLAN_FLAG,FREE_FLOW,USED_FLOW,REMAIN_FLOW,USER_TERM_BRAND,USER_TERM_MODEL "+
                 " from THB_USER_INFO_" + request.getParam("dataMonth") +
                 " where id='" + rowkey + "'";
@@ -124,7 +125,7 @@ public class GPRSProcess extends DRCommonProcess {
         List<String> months = DateUtil.getMonthsBetween(startTime, endTime, "yyyyMMdd");
 
         String sql = "";
-        String md5Phone = (String) new MD5RowKeyGenerator().generate(phoneNo);
+        String md5Phone = (String) new CommonStore().md5Prefix(phoneNo);
         String startKey = md5Phone + startTime;
         String stopKey = md5Phone + endTime + "g";
         for(String month : months) {
@@ -213,7 +214,7 @@ public class GPRSProcess extends DRCommonProcess {
                     return loadData(DefaultQueryParams.newBuilder().buildSQL(querySql));
                 }
             };
-            futures.add(Executor.getInstance().getThreadPool().submit(callable));
+            ThreadPoolManager.getExecutor("getQuery").submit(callable);
         }
         int i = 0;
         List<Map<String, String>> countRecords = null;
@@ -277,7 +278,7 @@ public class GPRSProcess extends DRCommonProcess {
                     return loadData(DefaultQueryParams.newBuilder().buildSQL(querySql));
                 }
             };
-            futures.add(Executor.getInstance().getThreadPool().submit(callable));
+            futures.add(ThreadPoolManager.getExecutor("getQuery").submit(callable));
         }
         int i = 0;
         List<Map<String, String>> countRecords = null;
@@ -324,7 +325,7 @@ public class GPRSProcess extends DRCommonProcess {
      * @return
      */
     public String[] buildSQL(int countCache, String pageCache, int limit, CommonDRProcessRequest request) {
-        String md5Phone = (String) new MD5RowKeyGenerator().generate(request.getParam("phoneNo"));
+        String md5Phone = (String) new CommonStore().md5Prefix(request.getParam("phoneNo"));
         String sql = "", countQuery = "", detailQuery = "", startKey = "", stopKey = "";
         if("F6".equals(request.getInterfaceType())) {
             String startTime = request.getParam("startDate");
@@ -475,7 +476,7 @@ public class GPRSProcess extends DRCommonProcess {
         List<String> months = DateUtil.getSuffixesBetween(dayTable, startTime, endTime, "yyyyMMddHHmmss");
 
         String sql = "";
-        String md5Phone = (String) new MD5RowKeyGenerator().generate(phoneNo);
+        String md5Phone = (String) new CommonStore().md5Prefix(phoneNo);
         String startKey = md5Phone + startTime;
         String stopKey = md5Phone + endTime + "g";
         for(String month : months) {
@@ -582,7 +583,7 @@ public class GPRSProcess extends DRCommonProcess {
         List<String> months = DateUtil.getSuffixesBetween(dayTable, startTime, endTime, "yyyyMMddHHmmss");
 
         String sql = "";
-        String md5Phone = (String) new MD5RowKeyGenerator().generate(phoneNo);
+        String md5Phone = (String) new CommonStore().md5Prefix(phoneNo);
         String startKey = md5Phone + startTime;
         String stopKey = md5Phone + endTime + "g";
         for(String month : months) {

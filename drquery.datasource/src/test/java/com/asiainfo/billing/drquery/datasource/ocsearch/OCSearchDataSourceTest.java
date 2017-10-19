@@ -14,7 +14,6 @@ public class OCSearchDataSourceTest {
         OCSearchDataSource ocSearchDataSource = (OCSearchDataSource) appContext.getBean("ocsearchDataSource");
 
 
-        System.out.println(null==ocSearchDataSource.getFactory().getConnectionHolder());
 
 //        OCSearchQueryParams dr = new OCSearchQueryParams(OCSearchQueryParams.REQUEST.GET);
 //
